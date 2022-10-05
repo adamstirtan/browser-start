@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #222;
+        color: #BBB;
+    }
+}
+
+section {
+    margin: 0;
+    padding: 0;
+    border: 1px solid red;
+}
+
+h1 {
+    margin: 0 0 1rem 0;
+    padding: 0;
+    font-size: 2em;
+}
+
+.container {
+    padding: 2rem;
+}
+
+.tiles {
+    display: grid;
+    counter-reset: grid-items;
+    position: relative;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
+}
+
+.tile {
+    background-color: purple;
+    padding: 1rem;
+    color: #fff;
+    border: 1px solid #fff;
+    counter-increment: grid-item;
+  }
+  
+  .tile::before {
+    content: counter(grid-item);
+  }
